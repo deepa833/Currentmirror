@@ -3,6 +3,8 @@
 Design and Analyze current mirror circuit as load active in amplifier circuit with Av>-10v/v, P<=1mW, Vdd=1.8V.
 ### Theory:
 A **current mirror** is a circuit used to copy  a reference current from one branch to another while maintaining a constant current. It typically consists of two or more transistors, where one sets the reference current, and the others replicate it. Current mirrors are widely used in analog circuits, such as biasing and amplifier stages, to ensure stable and predictable current flow.
+![Screenshot 2025-03-24 201447](https://github.com/user-attachments/assets/f8149444-e3f1-4a96-b72e-52ffd916376f)
+
 
 ###Working Principle:
 A current mirror typically consists of two identical transistors (BJTs or MOSFETs).
@@ -38,28 +40,79 @@ Mosfet Resistor, voltage supply and connecting wires.
 4.Observe output current stability and voltage compliance range.
 
 # Circuit 1
-![Screenshot 2025-03-24 194635](https://github.com/user-attachments/assets/a5134ea7-e6d8-4adc-ab1d-dd2ef6e1c44b)
+![Screenshot 2025-03-25 130504](https://github.com/user-attachments/assets/64f4b10a-84cd-410a-bc95-f81170750b52)
+
  #case 1:
- PMOSFET = length is 180nm, width is 10um
-NMOSFET = length is 180nm, width is 120.25um
+ PMOSFET = length is 180nm, width is 100m
+NMOSFET = length is 180nm, width is 28.2um
 #DC analysis:
-![Screenshot 2025-03-24 212129](https://github.com/user-attachments/assets/bc360a68-d5dc-452f-857b-ca9cbac37ddd)
-Vout= 1.299v
-Vx= 1.178v
+![Screenshot 2025-03-25 141540](https://github.com/user-attachments/assets/cacdc4c3-acbc-4681-a800-123a76cd9f01)
+
+Vout= 1.202v
+Vx= 1.206v
 Iref = 0.277mA
+# TRANSIENT ANALYSIS
+![Screenshot 2025-03-25 141617](https://github.com/user-attachments/assets/d455f4f8-4696-47f2-a402-89b966a70e45)
+
+
+# AC ANALYSIS:
+![Screenshot 2025-03-25 141644](https://github.com/user-attachments/assets/0bdc3491-0465-4353-bad9-05ccdb821121)
+
+
 # Case 2: 500nm
-PMOSFET = length is 500nm, width is 10um
-NMOSFET = length is 500nm, width is 207.617um
-Vout= 1.299v
-Vx= 1.178V
+
+PMOSFET = length is 500nm, width is 100u
+NMOSFET = length is 500nm, width is 35.5
+Vout= 1.71936v
+Vx= 1.15586v
 Iref = 0.277mA
-![Screenshot 2025-03-24 213128](https://github.com/user-attachments/assets/37680f29-95e0-42b2-81e8-5e6ec17ebdf1)
-# Case 3: 1umm PMOSFET = length is 1um, width is 10um
-NMOSFET = length is 1um, width is 250.5um
-Vout= 1.299V
-Vx= 1.178V
+![Screenshot 2025-03-25 131615](https://github.com/user-attachments/assets/358ff88d-39ad-4b22-8a18-146eb90545ea)
+
+# TRANSIENT ANALYSIS:
+![Screenshot 2025-03-25 132201](https://github.com/user-attachments/assets/df3b6bc9-ce42-4847-b633-200abcb5c7ef)
+
+#  AC ANALYSIS:
+![Screenshot 2025-03-25 132320](https://github.com/user-attachments/assets/d8b30127-6357-42b6-a884-3d6cd6370ad7)
+
+
+# Case 3: 1umm PMOSFET = length is 1um, width is 100u
+NMOSFET = length is 1um, width is 40um
+Vout= 1.72293
+Vx= 1.07207
 Iref = 0.277mA
-![Screenshot 2025-03-24 213844](https://github.com/user-attachments/assets/ec78c3e3-1304-475c-a8b9-da0853400f69)
+![Screenshot 2025-03-25 132910](https://github.com/user-attachments/assets/a5a7cb55-9554-48bc-b2a1-e025d3ee41f9)
+
+# TRANSIENT ANALYSIS:
+![Screenshot 2025-03-25 133045](https://github.com/user-attachments/assets/4d2537a2-d4cc-4e20-a6fc-e322a6b373b2)
+
+#  AC ANALYSIS:
+![Screenshot 2025-03-25 133127](https://github.com/user-attachments/assets/9c024b7d-8405-49e1-92d8-bf825de69161)
+
+# Circuit 2:
+# Aim : Design the diffrential amplifier having VDD=2V, P<=1mW, Vicm =1V as per the 3rd experiment and perform DC, Transient , AC analysis
+![Screenshot 2025-03-25 134911](https://github.com/user-attachments/assets/38dd2abb-c4ce-4d4b-b4fe-24f15834421e)
+
+
+# TRANSIENT ANALYSIS:
+![Screenshot 2025-03-25 135041](https://github.com/user-attachments/assets/8bfd593c-811a-4972-a471-78130fe0f767)
+
+#  AC ANALYSIS:
+![Screenshot 2025-03-25 125826](https://github.com/user-attachments/assets/06da16e9-e2bd-49fb-ba65-b5661351e680)
+
+The GAIN from the LTSpice simulation of this circuit is 12db
+
+# INFERENCE:
+
+1.The current mirror circuit effectively replicates a reference current with high accuracy, ensuring stable operation despite supply or load variations.
+
+2.The DC analysis confirms proper biasing and current mirroring.
+
+3.AC analysis demonstrates improved gain and output resistance due to the active load configuration. 
+
+4.The designed differential amplifier with a current mirror successfully enhances performance by improving bias stability and increasing gain.
+
+5.DC analysis confirms proper transistor biasing, AC analysis shows improved gain and bandwidth, and transient analysis verifies stable differential signal amplification.
+
 
 
 
